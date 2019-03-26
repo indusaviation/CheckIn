@@ -31,6 +31,8 @@ public class ClassCommon {
     public static String SET_TODOPUNCHES = "settodopunches.php?";
     public static String GET_TODOSUMMARY = "gettodosummary.php?";
     public static String GET_TODOMONTHTXN = "getmonthtodosummary.php?";
+    public static String GET_TODOPENDINGTXN = "getpendingtodolist.php?";
+    public static String GET_TODODONETXN = "getdonetodolist.php?";
 
 
 

@@ -14,6 +14,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatTextView;
+import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,19 +22,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.slatrack.gtms.activity.ActivityWelcome;
+import com.slatrack.gtms.adapter.AdapterTodoListDone;
+import com.slatrack.gtms.adapter.AdapterTodoListPending;
 import com.slatrack.gtms.adapter.AdapterTransactions;
 import com.slatrack.gtms.fragment.FragmentDiagnostics;
 import com.slatrack.gtms.fragment.FragmentScan;
 import com.slatrack.gtms.fragment.FragmentSosmessage;
 import com.slatrack.gtms.fragment.FragmentSubList;
 import com.slatrack.gtms.fragment.FragmentSupport;
+import com.slatrack.gtms.model.ModelDoneToDoList;
+import com.slatrack.gtms.model.ModelPendingToDoList;
 import com.slatrack.gtms.utils.ClassBottomNVFragment;
 import com.slatrack.gtms.utils.ClassCommon;
 import com.slatrack.gtms.utils.ClassCustomDialog;
@@ -66,7 +74,12 @@ public class FragmentTxnReport extends Fragment {
     public ListView listTransaction;
     private AppCompatTextView noHistoryText;
 
-    private AppCompatTextView orgName,userName,subDate,subType,orgStatus,subStatus;
+    private LinearLayout pendingDoneLayout;
+    private SwitchCompat switchTodo;
+
+    private int pageIndex = 0, pageSize = 0;
+
+    private AppCompatTextView orgName, userName, subDate, subType, orgStatus, subStatus;
 //    AppCompatButton btnRefresh;
 
     private ArrayList<ModelPunchReport> modelTransactionHistoryArrayList = new ArrayList<>();
@@ -79,6 +92,8 @@ public class FragmentTxnReport extends Fragment {
         progressBar = (ProgressBar) rootView.findViewById(R.id.progressBarTxn);
 
         noHistoryText = (AppCompatTextView) rootView.findViewById(R.id.noHistoryText);
+        pendingDoneLayout = (LinearLayout) rootView.findViewById(R.id.pendingDone);
+        switchTodo = (SwitchCompat) rootView.findViewById(R.id.switchTodo);
 //        orgName = (AppCompatTextView) findViewById(R.id.txnorgname);
 //        userName = (AppCompatTextView) findViewById(R.id.txnusername);
 //        subDate = (AppCompatTextView) findViewById(R.id.txnsubdate);
@@ -91,28 +106,42 @@ public class FragmentTxnReport extends Fragment {
         database = new ClassDatabase(activityWelcome);
 
 
-        getComplianceSummary();
+        if (database.getOrganization().getSubtype().equalsIgnoreCase("EVENTS")) {
+            pendingDoneLayout.setVisibility(View.VISIBLE);
+            getToDoList(true);
+        } else {
+            getComplianceSummary();
+        }
+
 
         progressBar.setVisibility(View.GONE);
+
+        switchTodo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                getToDoList(!b);
+            }
+        });
+
         return rootView;
 
     }
 
 
-    public void refresh(){
+    public void refresh() {
         getComplianceSummary();
         getRefreshOrgData();
     }
 
 
-    private void getComplianceSummary(){
+    private void getComplianceSummary() {
 
         progressBar.setVisibility(View.VISIBLE);
         listTransaction.setAdapter(null);
         listTransaction.setVisibility(View.GONE);
         AsyncHttpClient client = new AsyncHttpClient();
 
-        if(!ClassUtility.IsConnectedToNetwork(activityWelcome)){
+        if (!ClassUtility.IsConnectedToNetwork(activityWelcome)) {
             Toast.makeText(getActivity(), getResources().getString(R.string.nonetwork_mobiledataoff), Toast.LENGTH_SHORT).show();
             return;
         }
@@ -120,12 +149,11 @@ public class FragmentTxnReport extends Fragment {
         String imei = globalVariable.getImei();
 
         String configURL = "";
-        if(database.getOrganization().getSubtype().equalsIgnoreCase("EVENTS")){
+        if (database.getOrganization().getSubtype().equalsIgnoreCase("EVENTS")) {
 
-            configURL = ClassCommon.BASE_URL+ClassCommon.GET_TODOMONTHTXN+"data="+imei;
-        }
-        else{
-             configURL = ClassCommon.BASE_URL+ClassCommon.GET_MONTHTXN+"data="+imei;
+            configURL = ClassCommon.BASE_URL + ClassCommon.GET_TODOMONTHTXN + "data=" + imei;
+        } else {
+            configURL = ClassCommon.BASE_URL + ClassCommon.GET_MONTHTXN + "data=" + imei;
         }
 
 
@@ -134,16 +162,16 @@ public class FragmentTxnReport extends Fragment {
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
                     progressBar.setVisibility(View.GONE);
-                    String response = new String(responseBody,"UTF-8");
+                    String response = new String(responseBody, "UTF-8");
                     JSONObject responseObj = new JSONObject(response);
 
-                    if (!responseObj.getBoolean("ERROR")){
+                    if (!responseObj.getBoolean("ERROR")) {
 
                         JSONArray resultArr = responseObj.getJSONArray("RESULT");
 
-                        if(resultArr.length()>0) {
+                        if (resultArr.length() > 0) {
                             modelTransactionHistoryArrayList = new ArrayList<>();
-                            for (int index= 0 ; index<resultArr.length(); index++) {
+                            for (int index = 0; index < resultArr.length(); index++) {
                                 JSONObject resultObj = resultArr.getJSONObject(index);
 
                                 //{"Date":"11\/09\/2018","TotalSwipe":206,"TotalMissed":10,"TotalExpected":216,"SwipePercentage":"95.37"},
@@ -164,26 +192,26 @@ public class FragmentTxnReport extends Fragment {
 
                                 modelTransactionHistoryArrayList.add(transactionHistory);
                             }
-                            AdapterTransactions adapterTransactions = new AdapterTransactions(activityWelcome,modelTransactionHistoryArrayList);
+                            AdapterTransactions adapterTransactions = new AdapterTransactions(activityWelcome, modelTransactionHistoryArrayList);
 
                             listTransaction.setAdapter(adapterTransactions);
                             listTransaction.setVisibility(View.VISIBLE);
 
-                        }else {
+                        } else {
                             progressBar.setVisibility(View.GONE);
                             noHistoryText.setVisibility(View.VISIBLE);
                         }
 
-                    }else {
+                    } else {
                         progressBar.setVisibility(View.GONE);
                         noHistoryText.setVisibility(View.VISIBLE);
 
                     }
-                }catch (Exception e){
+                } catch (Exception e) {
                     progressBar.setVisibility(View.GONE);
                     noHistoryText.setVisibility(View.VISIBLE);
                     e.printStackTrace();
-                    Log.e("exception",""+e.getMessage());
+                    Log.e("exception", "" + e.getMessage());
                 }
             }
 
@@ -191,8 +219,8 @@ public class FragmentTxnReport extends Fragment {
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 
                 progressBar.setVisibility(View.GONE);
-                ClassCustomDialog cdd=new ClassCustomDialog(activityWelcome,
-                        getResources().getString(R.string.server_issue),getResources().getString(R.string.msg_title_information));
+                ClassCustomDialog cdd = new ClassCustomDialog(activityWelcome,
+                        getResources().getString(R.string.server_issue), getResources().getString(R.string.msg_title_information));
                 cdd.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 cdd.show();
             }
@@ -209,55 +237,75 @@ public class FragmentTxnReport extends Fragment {
         });
     }
 
-    private void getRefreshOrgData(){
+    private void getToDoList(final boolean isPending) {
 
+        progressBar.setVisibility(View.VISIBLE);
+        listTransaction.setAdapter(null);
+        listTransaction.setVisibility(View.GONE);
         AsyncHttpClient client = new AsyncHttpClient();
 
-        if(!ClassUtility.IsConnectedToNetwork(activityWelcome)){
+        if (!ClassUtility.IsConnectedToNetwork(activityWelcome)) {
             Toast.makeText(getActivity(), getResources().getString(R.string.nonetwork_mobiledataoff), Toast.LENGTH_SHORT).show();
             return;
         }
 
         String imei = globalVariable.getImei();
-        String configURL = ClassCommon.BASE_URL+ClassCommon.GET_CONFIG+"data="+imei;
+
+        String configURL = "";
+
+        if (isPending)
+            configURL = ClassCommon.BASE_URL + ClassCommon.GET_TODOPENDINGTXN + "data=" + imei + "," + pageIndex + "," + pageSize;
+        else
+            configURL = ClassCommon.BASE_URL + ClassCommon.GET_TODODONETXN + "data=" + imei + "," + pageIndex + "," + pageSize;
+
         client.get(configURL, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
                     progressBar.setVisibility(View.GONE);
-                    String response = new String(responseBody,"UTF-8");
-                    JSONObject responseObj = new JSONObject(response);
+                    String response = new String(responseBody, "UTF-8");
 
-                    if (!responseObj.getBoolean("ERROR")){
+                    Gson gson = new Gson();
 
-                        JSONArray resultArr = responseObj.getJSONArray("RESULT");
-                        if(resultArr.length() > 0) {
+                    if (isPending) {
+                        ModelPendingToDoList modelPendingToDoList = gson.fromJson(response, ModelPendingToDoList.class);
+                        if (!modelPendingToDoList.isERROR()) {
 
-                            JSONObject resultObj = resultArr.getJSONObject(0);
-                            InserUserData(resultObj);
-                        }else {
+                            AdapterTodoListPending adapterTodoListPending = new AdapterTodoListPending(activityWelcome, modelPendingToDoList.getRESULT());
 
-                            ClassCustomDialog cdd=new ClassCustomDialog(activityWelcome,
-                                    getResources().getString(R.string.verification_fail),getResources().getString(R.string.msg_title_information));
-                            cdd.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-                            cdd.show();
+                            listTransaction.setAdapter(adapterTodoListPending);
+                            listTransaction.setVisibility(View.VISIBLE);
+
+                        } else {
+                            progressBar.setVisibility(View.GONE);
+                            noHistoryText.setVisibility(View.VISIBLE);
+
+                        }
+
+                    } else {
+                        ModelDoneToDoList modelDoneToDoList = gson.fromJson(response, ModelDoneToDoList.class);
+                        if (!modelDoneToDoList.isERROR()) {
+
+
+                            AdapterTodoListDone adapterTodoListDone = new AdapterTodoListDone(activityWelcome, modelDoneToDoList.getRESULT());
+
+                            listTransaction.setAdapter(adapterTodoListDone);
+                            listTransaction.setVisibility(View.VISIBLE);
+
+
+                        } else {
+                            progressBar.setVisibility(View.GONE);
+                            noHistoryText.setVisibility(View.VISIBLE);
 
                         }
 
                     }
-                    else {
-                        ClassCustomDialog cdd=new ClassCustomDialog(activityWelcome,
-                                getResources().getString(R.string.verification_fail),getResources().getString(R.string.msg_title_information));
-                        cdd.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
-                        cdd.show();
 
-                    }
-
-
-                }catch (Exception e){
+                } catch (Exception e) {
                     progressBar.setVisibility(View.GONE);
+                    noHistoryText.setVisibility(View.VISIBLE);
                     e.printStackTrace();
-                    Log.e("exception",""+e.getMessage());
+                    Log.e("exception", "" + e.getMessage());
                 }
             }
 
@@ -265,8 +313,81 @@ public class FragmentTxnReport extends Fragment {
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
 
                 progressBar.setVisibility(View.GONE);
-                ClassCustomDialog cdd=new ClassCustomDialog(activityWelcome,
-                        getResources().getString(R.string.server_issue),getResources().getString(R.string.msg_title_information));
+                ClassCustomDialog cdd = new ClassCustomDialog(activityWelcome,
+                        getResources().getString(R.string.server_issue), getResources().getString(R.string.msg_title_information));
+                cdd.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                cdd.show();
+            }
+
+            @Override
+            public void onStart() {
+
+            }
+
+            @Override
+            public void onFinish() {
+                progressBar.setVisibility(View.GONE);
+            }
+        });
+    }
+
+    private void getRefreshOrgData() {
+
+        AsyncHttpClient client = new AsyncHttpClient();
+
+        if (!ClassUtility.IsConnectedToNetwork(activityWelcome)) {
+            Toast.makeText(getActivity(), getResources().getString(R.string.nonetwork_mobiledataoff), Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        String imei = globalVariable.getImei();
+        String configURL = ClassCommon.BASE_URL + ClassCommon.GET_CONFIG + "data=" + imei;
+        client.get(configURL, new AsyncHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
+                try {
+                    progressBar.setVisibility(View.GONE);
+                    String response = new String(responseBody, "UTF-8");
+                    JSONObject responseObj = new JSONObject(response);
+
+                    if (!responseObj.getBoolean("ERROR")) {
+
+                        JSONArray resultArr = responseObj.getJSONArray("RESULT");
+                        if (resultArr.length() > 0) {
+
+                            JSONObject resultObj = resultArr.getJSONObject(0);
+                            InserUserData(resultObj);
+                        } else {
+
+                            ClassCustomDialog cdd = new ClassCustomDialog(activityWelcome,
+                                    getResources().getString(R.string.verification_fail), getResources().getString(R.string.msg_title_information));
+                            cdd.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                            cdd.show();
+
+                        }
+
+                    } else {
+                        ClassCustomDialog cdd = new ClassCustomDialog(activityWelcome,
+                                getResources().getString(R.string.verification_fail), getResources().getString(R.string.msg_title_information));
+                        cdd.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+                        cdd.show();
+
+                    }
+
+
+                } catch (Exception e) {
+                    progressBar.setVisibility(View.GONE);
+                    e.printStackTrace();
+                    Log.e("exception", "" + e.getMessage());
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
+
+                progressBar.setVisibility(View.GONE);
+                ClassCustomDialog cdd = new ClassCustomDialog(activityWelcome,
+                        getResources().getString(R.string.server_issue), getResources().getString(R.string.msg_title_information));
                 cdd.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 cdd.show();
 
@@ -274,7 +395,7 @@ public class FragmentTxnReport extends Fragment {
         });
     }
 
-    private void InserUserData(JSONObject resultObj){
+    private void InserUserData(JSONObject resultObj) {
 
         try {
 
@@ -323,7 +444,7 @@ public class FragmentTxnReport extends Fragment {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
 
-                            while( database.userCount() > 0){
+                            while (database.userCount() > 0) {
                                 ModelReader objReader = database.getUser();
                                 UnMapUser(objReader.getImei1());
                                 UnMapUser(objReader.getImei2());
@@ -399,44 +520,43 @@ public class FragmentTxnReport extends Fragment {
             database.insertOrganization(objOrganization);
 
 
-        }catch (Exception e){
+        } catch (Exception e) {
             progressBar.setVisibility(View.GONE);
             e.printStackTrace();
-            Log.e("exception",""+e.getMessage());
+            Log.e("exception", "" + e.getMessage());
         }
 
     }
 
-    public void UnMapUser(String imei){
+    public void UnMapUser(String imei) {
 
         AsyncHttpClient client = new AsyncHttpClient();
 
-        if(!ClassUtility.IsConnectedToNetwork(activityWelcome)){
+        if (!ClassUtility.IsConnectedToNetwork(activityWelcome)) {
             Toast.makeText(getActivity(), getResources().getString(R.string.nonetwork_mobiledataoff), Toast.LENGTH_SHORT).show();
             return;
         }
 
-        String configURL = ClassCommon.BASE_URL+ClassCommon.SET_UNMAPUSER+"data="+imei;
+        String configURL = ClassCommon.BASE_URL + ClassCommon.SET_UNMAPUSER + "data=" + imei;
         client.get(configURL, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 try {
                     progressBar.setVisibility(View.GONE);
-                    String response = new String(responseBody,"UTF-8");
+                    String response = new String(responseBody, "UTF-8");
                     JSONObject responseObj = new JSONObject(response);
 
-                    if (!responseObj.getBoolean("ERROR")){
+                    if (!responseObj.getBoolean("ERROR")) {
+
+                    } else {
 
                     }
-                    else {
-
-                    }
 
 
-                }catch (Exception e){
+                } catch (Exception e) {
                     progressBar.setVisibility(View.GONE);
                     e.printStackTrace();
-                    Log.e("exception",""+e.getMessage());
+                    Log.e("exception", "" + e.getMessage());
                 }
             }
 
@@ -445,15 +565,14 @@ public class FragmentTxnReport extends Fragment {
 
                 progressBar.setVisibility(View.GONE);
 
-                ClassCustomDialog cdd=new ClassCustomDialog(activityWelcome,
-                        getResources().getString(R.string.server_issue),getResources().getString(R.string.msg_title_information));
+                ClassCustomDialog cdd = new ClassCustomDialog(activityWelcome,
+                        getResources().getString(R.string.server_issue), getResources().getString(R.string.msg_title_information));
                 cdd.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
                 cdd.show();
 
             }
         });
     }
-
 
 
 }
