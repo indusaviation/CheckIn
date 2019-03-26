@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sosmsg_array">
+        <item>ELECTRICAL DAMAGE</item>
+        <item>EQUIPMENTS NOT WORKING</item>
+        <item>FIRE POSSIBILITY</item>
+        <item>MEDICAL EMERGENCY</item>
+        <item>OTHER REASON</item>
+        <item>PROPERTY DAMAGED</item>
+        <item>SUPPORT NEEDED</item>
+        <item>THEFT OCCURED</item>
+    </string-array>
+</resources>

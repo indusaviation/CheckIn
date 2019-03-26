@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FragmentSosmessage">
+
+    <ProgressBar
+        android:id="@+id/progressBarSos"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"/>
+
+
+    <LinearLayout
+        android:id="@+id/sosscreentextLayout"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:weightSum="1"
+        android:background="@mipmap/sos_header">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.75"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/sosscreentext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="8dp"
+                android:padding="5dp"
+                android:text="@string/sos_text"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/sosscreentext2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="8dp"
+                android:paddingStart="5dp"
+                android:text="@string/sos_text1"
+                android:textColor="@color/colorEmergencyText"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"/>
+
+    </LinearLayout>
+
+
+
+
+    <ListView
+        android:id="@+id/sosmsglist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:scrollbars="vertical"
+        android:layout_alignStart="@id/sosscreentextLayout"
+        android:layout_alignEnd="@+id/sosscreentextLayout"
+        android:layout_below="@+id/sosscreentextLayout"
+        android:dividerHeight="0dp"
+        android:divider="@android:color/transparent"/>
+
+</RelativeLayout>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2.5dp"
+    app:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:id="@+id/gradientView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient_view_1"
+            android:padding="10dp">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/subnametxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:text="Silver"
+                android:layout_centerVertical="true"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:paddingEnd="8dp"
+                android:layout_toStartOf="@+id/subscribe"
+                />
+
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/subscribe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btnSubscribe"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/subscribe_back"
+                android:elevation="3dp"
+                android:clickable="true"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/black"
+                android:textAllCaps="true"
+                />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:weightSum="3"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_marginEnd="4dp"
+                >
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/ic_calender"
+                    android:layout_gravity="center_vertical"
+                    />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/subperiodtxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="3dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorBorder"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_marginEnd="4dp"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/RS_symbol"
+                    android:textSize="30sp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/subamounttxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:text="Mithi"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="3dp"/>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorBorder"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="8dp"
+                >
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rate"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="17sp"
+                    android:layout_marginEnd="10dp"
+                    android:textColor="@android:color/black"
+                    />
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/subratestxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="3dp"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/suboffertxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"/>
+
+
+
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

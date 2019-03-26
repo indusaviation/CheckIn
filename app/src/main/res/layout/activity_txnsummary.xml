@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayoutTxn"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorBackgroundTxnSummery"
+    tools:context=".fragment.FragmentTxnReport">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:id="@+id/layouttxntop"
+        android:weightSum="2"
+        android:background="@color/colorDasboardLayout"
+        >
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/organizationinfotext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:text="@string/organizationStatus"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/active_status_background">
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/active_text_back">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_done"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/refresh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ACTIVE"
+                    android:padding="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:clickable="true"
+                    android:textColor="@color/colorActiveText"
+                    android:textAllCaps="true"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/txnCompText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/history"
+        android:layout_below="@+id/layouttxntop"
+        android:layout_alignStart="@+id/layouttxntop"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/noHistoryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_history"
+        android:textColor="@android:color/white"
+        android:visibility="gone"
+       />
+
+    <ProgressBar
+        android:id="@+id/progressBarTxn"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_gravity = "center_vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white"
+        />
+
+    <ListView
+        android:id="@+id/listTransactions"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@+id/txnCompText"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dividerHeight="2dp"
+        android:scrollbars="none"
+        android:divider="@android:color/transparent"
+
+        />
+
+
+</RelativeLayout>

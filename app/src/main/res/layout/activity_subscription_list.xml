@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayoutTxn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackgroundTxnSummery"
+    tools:context=".fragment.FragmentSubList">
+
+
+    <RelativeLayout
+        android:id="@+id/orgStatusHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:weightSum="2"
+        android:background="@color/colorDasboardLayout">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/orginfotextsub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="0dp"
+            android:layout_weight="1"
+            android:text="@string/organizationStatus"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:gravity="center"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/active_status_background">
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="match_parent"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/active_text_back">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_done"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/refreshsub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ACTIVE"
+                    android:padding="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:clickable="true"
+                    android:textColor="@color/colorActiveText"
+                    android:textAllCaps="true"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/subratetxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/subscription_details"
+        android:layout_below="@+id/orgStatusHeader"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/noHistoryTextSub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_history"
+        android:textColor="@android:color/white"
+        android:visibility="gone"
+        />
+
+
+    <ProgressBar
+        android:id="@+id/progressBarSub"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_gravity = "center_vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white" />
+
+    <ListView
+        android:id="@+id/subratelist"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:scrollbars="none"
+        android:layout_below="@+id/subratetxt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       />
+
+
+
+</RelativeLayout>

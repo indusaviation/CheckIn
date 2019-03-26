@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="2.5dp"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="10dp">
+
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:visibility="gone">-->
+
+
+        <!--<android.support.v7.widget.AppCompatImageView-->
+            <!--android:id="@+id/revokeImage"-->
+            <!--android:layout_width="20dp"-->
+            <!--android:layout_height="20dp"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:background="@drawable/status_amber" />-->
+
+        <!--<RelativeLayout-->
+            <!--android:id="@+id/layoutPunches"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerHorizontal="true">-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/swipeLayout"-->
+                <!--android:layout_width="75dp"-->
+                <!--android:layout_height="75dp"-->
+                <!--android:layout_marginStart="10dp"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:background="@drawable/swipe_circle"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="4dp">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:id="@+id/txntotalswipe"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:text="100"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:textStyle="bold" />-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:text="Swipe"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:textStyle="bold" />-->
+
+                <!--</LinearLayout>-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/missedLayout"-->
+                <!--android:layout_width="75dp"-->
+                <!--android:layout_height="75dp"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:layout_toEndOf="@+id/swipeLayout"-->
+                <!--android:background="@drawable/missed_circle"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="4dp">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:id="@+id/txnmissedcount"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:text="100"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:textStyle="bold" />-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:text="Missed"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:textStyle="bold" />-->
+
+                <!--</LinearLayout>-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/expectedLayout"-->
+                <!--android:layout_width="75dp"-->
+                <!--android:layout_height="75dp"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:layout_toEndOf="@+id/missedLayout"-->
+                <!--android:background="@drawable/expected_circle"-->
+                <!--android:orientation="vertical"-->
+                <!--android:padding="4dp">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:id="@+id/txnexptswipe"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:text="100"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:textStyle="bold" />-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:text="Expected"-->
+                        <!--android:textColor="@color/white"-->
+                        <!--android:textSize="15sp"-->
+                        <!--android:textStyle="bold" />-->
+
+                <!--</LinearLayout>-->
+
+            <!--</RelativeLayout>-->
+
+        <!--</RelativeLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:id="@+id/layoutCompliance"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@id/layoutPunches"-->
+            <!--android:layout_alignStart="@+id/layoutPunches"-->
+            <!--android:layout_alignEnd="@+id/layoutPunches"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:layout_marginStart="10dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:orientation="vertical">-->
+
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                    <!--android:id="@+id/complianceTitle"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginBottom="10dp"-->
+                    <!--android:paddingStart="10dp"-->
+                    <!--android:text="Compliance :"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="17sp"-->
+                    <!--android:textStyle="bold" />-->
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                    <!--android:id="@+id/complianceValueText"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginBottom="10dp"-->
+                    <!--android:paddingStart="10dp"-->
+                    <!--android:text="0.00%"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="17sp"-->
+                    <!--android:textStyle="bold" />-->
+
+
+            <!--</LinearLayout>-->
+
+            <!--<ProgressBar-->
+                <!--android:id="@+id/complianceValue"-->
+                <!--style="@android:style/Widget.ProgressBar.Horizontal"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="15dp"-->
+                <!--android:layout_gravity="center_vertical"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:layout_toEndOf="@+id/complianceTitle"-->
+                <!--android:max="100"-->
+                <!--android:progress="100"-->
+                <!--android:paddingStart="10dp"-->
+                <!--android:progressDrawable="@drawable/progress_drawable" />-->
+
+
+        <!--</LinearLayout>-->
+
+        <!--<android.support.v7.widget.AppCompatTextView-->
+            <!--android:id="@+id/date"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/layoutCompliance"-->
+            <!--android:layout_alignParentEnd="true"-->
+            <!--android:layout_gravity="top"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:text="May 05 1992"-->
+            <!--android:textColor="@android:color/black"-->
+            <!--android:textSize="14dp" />-->
+
+
+    <!--</RelativeLayout>-->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/revokeImage"
+            android:layout_width="22dp"
+            android:layout_height="10dp"
+            android:layout_gravity="end"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/status_amber" />
+
+        <LinearLayout
+            android:id="@+id/countLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:gravity="center_horizontal"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txntotalswipe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/colorSwipeGreen"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_swipe"
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_below="@+id/txntotalswipe"
+                    android:textColor="@color/colorSwipeGreen"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="1.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorBorderTxnSummery" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:gravity="center_horizontal"
+                android:layout_weight="1">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txnmissedcount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/colorMissedRed"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_missed"
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_below="@+id/txnmissedcount"
+                    android:textColor="@color/colorMissedRed"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="1.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorBorderTxnSummery" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="65dp"
+                android:gravity="center_horizontal"
+                android:layout_weight="1">
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txnexptswipe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15"
+                    android:layout_centerHorizontal="true"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/colorExpectedBlue"/>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/_expected"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/txnexptswipe"
+                    android:textColor="@color/colorExpectedBlue"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_below="@+id/countLayout"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@color/colorBorderTxnSummery" />
+
+
+        <RelativeLayout
+            android:layout_below="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_toStartOf="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/complianceTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/_compliance"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/complianceValueText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginBottom="10dp"
+                        android:paddingStart="10dp"
+                        android:text="0%"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/colorPercent"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <ProgressBar
+                    android:id="@+id/complianceValue"
+                    style="@android:style/Widget.ProgressBar.Horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_toEndOf="@+id/complianceTitle"
+                    android:max="100"
+                    android:progress="40"
+                    android:progressDrawable="@drawable/progress_drawable" />
+
+
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:textColor="@android:color/black"
+                android:textSize="14dp" />
+
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

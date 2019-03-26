@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout5"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white"
+    tools:context=".activity.ActivityRegistration">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayoutRegistration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <include
+            layout="@layout/welcometoolbar"
+            />
+
+    </android.support.design.widget.AppBarLayout>
+
+
+    <ImageView
+        android:id="@+id/slalogo_reg"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sla_logo" />
+
+    <TextView
+        android:id="@+id/welcometext_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="18dp"
+        android:text="@string/slatrack_version"
+        android:textAllCaps="true"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/slalogo_reg"
+        app:layout_constraintTop_toTopOf="@+id/slalogo_reg" />
+
+    <TextView
+        android:id="@+id/registrationText"
+        android:layout_width="336dp"
+        android:layout_height="102dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:padding="15dp"
+        android:text="Sample TextView..."
+        android:textColor="@color/black"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@+id/slalogo_reg"
+        app:layout_constraintTop_toBottomOf="@+id/slalogo_reg" />
+
+
+    <EditText
+        android:id="@+id/txtUserName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:inputType="textPersonName"
+        android:hint="Enter your name"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@+id/registrationText"
+        app:layout_constraintTop_toBottomOf="@+id/registrationText" />
+
+
+
+    <EditText
+        android:id="@+id/txtOrgName"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:layout_marginStart="20dp"
+        android:text=""
+        android:hint="Enter organization name"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@+id/txtUserName"
+        app:layout_constraintTop_toBottomOf="@+id/txtUserName"
+        />
+
+
+    <EditText
+        android:id="@+id/txtPhone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginStart="20dp"
+        android:inputType="phone"
+        android:text=""
+        android:hint="Enter contact number"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@+id/txtOrgName"
+        app:layout_constraintTop_toBottomOf="@+id/txtOrgName"  />
+
+
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_marginStart="20dp"
+        android:hint="Enter email address"
+        android:text=""
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="@+id/txtPhone"
+        app:layout_constraintTop_toBottomOf="@+id/txtPhone"  />
+
+
+    <Button
+        android:id="@+id/btnRegistrationSubmit"
+        android:layout_width="260dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/button_background_green"
+        android:text="Request Registration"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ProgressBar
+        android:id="@+id/progressBarReg"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+</android.support.constraint.ConstraintLayout>

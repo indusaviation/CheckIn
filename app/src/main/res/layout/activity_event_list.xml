@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FragmentEventList"
+    android:id="@+id/relativeLayout6">
+
+
+    <TextView
+        android:id="@+id/eventscreentext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:padding="5dp"
+        android:text="@string/event_text"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+       android:layout_alignParentTop="true"
+        />
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:id="@+id/line1"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/orangedark"
+       android:layout_below="@+id/eventscreentext" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/listviewText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="Events List"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/line1"
+        />
+
+    <ListView
+        android:id="@+id/eventlist"
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/checkpoint_bg"
+        android:scrollbars="vertical"
+        android:layout_below="@+id/listviewText" />
+
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/saverecords"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/eventlist"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/button_background_green"
+        android:gravity="center"
+        android:text="@string/save_records"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+    <ProgressBar
+        android:id="@+id/progressBarEvent"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:gravity="center"
+        android:layout_gravity = "center_vertical"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_centerInParent="true"
+        android:textColor="@android:color/white"
+        />
+
+</RelativeLayout>

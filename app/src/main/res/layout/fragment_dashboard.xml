@@ -1,0 +1,1044 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/firstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorDasboardLayout"
+            android:padding="16dp">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/orgNameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/orgname"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txnorgnamewel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/orgNameTitle"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/colorOrgName"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:id="@+id/linsubdate"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sub_validity"
+                    android:textColor="@color/white" />
+
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txnsubdatewel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/nameTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txnorgnamewel"
+                android:layout_marginTop="15dp"
+                android:text="@string/name"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txnusernamewel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameTitle"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/rdstatuslable"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:layout_below="@+id/linsubdate"
+                android:layout_alignTop="@+id/nameTitle"
+                android:text="@string/reader_status"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="@color/white" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_alignTop="@+id/txnusernamewel"
+                android:layout_below="@+id/rdstatuslable"
+                android:background="@drawable/active_status_background">
+
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content">-->
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/showrdstatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rd_disconnected"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:paddingStart="8dp"
+                        android:paddingEnd="8dp"
+                        android:layout_gravity="center_vertical"
+                        android:clickable="true"
+                        android:background="@drawable/rdstatus_back_red"
+                        android:textColor="@color/white"
+                        android:textAllCaps="true"
+                        />
+                <!--</LinearLayout>-->
+
+
+
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/firstLayout"
+            android:background="@color/colorDasboardLayout2"
+            android:padding="8dp"
+            android:weightSum="3">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txnorgstatuswelTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txnorgnamewel"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="3dp"
+                    android:text="@string/org_status"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/white" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txnorgstatuswel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameTitle"
+                    android:layout_gravity="center_horizontal"
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorBorderView" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txnsubtypewelTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txnorgnamewel"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="3dp"
+                    android:text="@string/sub_type"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/white" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txnsubtypewel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameTitle"
+                    android:layout_gravity="center_horizontal"
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1.5dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorBorderView" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txnsubstatuswelTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txnorgnamewel"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="3dp"
+                    android:text="@string/sub_status"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/white" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txnsubstatuswel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/nameTitle"
+                    android:layout_gravity="center_horizontal"
+                    android:textAllCaps="true"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/monthsummary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutStatus"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10sp"
+            android:text="@string/monthly_summary_of_compliance"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/layoutCards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/monthsummary"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10sp"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="2">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/totalSwipe"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorTotalSwipeCard"
+                            android:paddingStart="10dp"
+                            android:paddingTop="4dp"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/totalSwipeText"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/totalSwipe"
+                            android:textColor="@color/colorCardText" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="2">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/totalMissed"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorMissedSwipeCard"
+                            android:paddingStart="10dp"
+                            android:paddingTop="4dp"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/totalMissedText"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/missedSwipe"
+                            android:textColor="@color/colorCardText" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="2">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/totalExpected"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorExpectedSwipeCard"
+                            android:paddingStart="10dp"
+                            android:paddingTop="4dp"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/totalExpectedText"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/expectedSwipe"
+                            android:textColor="@color/colorCardText" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    app:cardUseCompatPadding="true"
+                    app:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:weightSum="2">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/percentCompliance"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:background="@color/colorComplianceCard"
+                            android:paddingStart="10dp"
+                            android:paddingTop="4dp"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            android:id="@+id/percentComplianceText"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="@string/Compliance"
+                            android:textColor="@color/colorCardText" />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layoutCards"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <LinearLayout
+                android:id="@+id/linearwelcome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/recCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="sans-serif"
+                    android:text="@string/default_count"
+                    android:textColor="@color/orangedark"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/reclable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:text="@string/total_upload_count_lbl"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_anchorGravity="right|center" />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/upload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:background="@drawable/start_slatrack_button"
+                android:gravity="center"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:text="@string/upload_punches"
+                android:textAlignment="center"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBarWelcome"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_below="@+id/layout1">-->
+
+
+        <!--<android.support.constraint.ConstraintLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent">-->
+
+
+            <!--<android.support.v7.widget.CardView-->
+                <!--android:id="@+id/userinfowelcome"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginLeft="10dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--app:cardBackgroundColor="@color/colorAccent"-->
+                <!--app:cardElevation="5dp"-->
+                <!--app:cardUseCompatPadding="true"-->
+                <!--app:contentPadding="10dp">-->
+
+                <!--<RelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<LinearLayout-->
+                        <!--android:id="@+id/layoutwel1"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginEnd="5dp"-->
+                        <!--android:orientation="vertical">-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:weightSum="2">-->
+
+                            <!--<TextView-->
+                                <!--android:layout_width="150dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="0.5"-->
+                                <!--android:gravity="left"-->
+                                <!--android:text="@string/orgname"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textStyle="bold" />-->
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/txnorgnamewel"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1.5"-->
+                                <!--android:gravity="left"-->
+                                <!--android:textColor="@color/white" />-->
+
+                        <!--</LinearLayout>-->
+
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:weightSum="2">-->
+
+                            <!--<TextView-->
+                                <!--android:layout_width="150dp"-->
+                                <!--android:layout_height="match_parent"-->
+                                <!--android:layout_weight="0.5"-->
+                                <!--android:gravity="left"-->
+                                <!--android:text="@string/name"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textStyle="bold" />-->
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/txnusernamewel"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1.5"-->
+                                <!--android:gravity="left"-->
+                                <!--android:textColor="@color/white" />-->
+
+                        <!--</LinearLayout>-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:weightSum="2">-->
+
+                            <!--<TextView-->
+                                <!--android:layout_width="150dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="0.5"-->
+                                <!--android:gravity="left"-->
+                                <!--android:text="@string/org_status"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textStyle="bold" />-->
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/txnorgstatuswel"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1.5"-->
+                                <!--android:gravity="left"-->
+                                <!--android:textColor="@color/white" />-->
+
+                        <!--</LinearLayout>-->
+
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:weightSum="2">-->
+
+                            <!--<TextView-->
+                                <!--android:layout_width="150dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="0.5"-->
+                                <!--android:gravity="left"-->
+                                <!--android:text="@string/sub_validity"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textStyle="bold" />-->
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/txnsubdatewel"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1.5"-->
+                                <!--android:gravity="left"-->
+                                <!--android:text=""-->
+                                <!--android:textColor="@color/white"-->
+
+                                <!--/>-->
+
+                        <!--</LinearLayout>-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:weightSum="2">-->
+
+                            <!--<TextView-->
+                                <!--android:layout_width="150dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="0.5"-->
+                                <!--android:gravity="left"-->
+                                <!--android:text="@string/sub_type"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textStyle="bold" />-->
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/txnsubtypewel"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1.5"-->
+                                <!--android:gravity="left"-->
+                                <!--android:text="GTMS"-->
+                                <!--android:textColor="@color/white"-->
+
+                                <!--/>-->
+
+                        <!--</LinearLayout>-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:orientation="horizontal"-->
+                            <!--android:weightSum="2">-->
+
+                            <!--<TextView-->
+                                <!--android:layout_width="150dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="0.5"-->
+                                <!--android:gravity="left"-->
+                                <!--android:text="@string/sub_status"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textStyle="bold" />-->
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/txnsubstatuswel"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1.5"-->
+                                <!--android:gravity="left"-->
+                                <!--android:text="ACTIVE"-->
+                                <!--android:textColor="@color/white" />-->
+
+                        <!--</LinearLayout>-->
+
+
+                    <!--</LinearLayout>-->
+
+
+                <!--</RelativeLayout>-->
+
+            <!--</android.support.v7.widget.CardView>-->
+
+            <!--<ImageView-->
+                <!--android:id="@+id/orgLogo"-->
+                <!--android:layout_width="80dp"-->
+                <!--android:layout_height="80dp"-->
+                <!--android:layout_alignParentEnd="true"-->
+                <!--android:layout_marginStart="0dp"-->
+                <!--android:layout_marginTop="15dp"-->
+                <!--android:background="@drawable/circle"-->
+                <!--android:clickable="false"-->
+                <!--android:visibility="invisible" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/monthsummary"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="20dp"-->
+                <!--android:layout_marginTop="15sp"-->
+                <!--android:fontFamily="sans-serif"-->
+                <!--android:gravity="left"-->
+                <!--android:text="@string/monthly_summary_of_compliance"-->
+                <!--android:textColor="@color/black"-->
+                <!--android:textSize="16sp"-->
+                <!--android:textStyle="bold"-->
+                <!--app:layout_constraintStart_toStartOf="@+id/userinfowelcome"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/userinfowelcome" />-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/layoutBoard"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="20dp"-->
+                <!--android:orientation="vertical"-->
+                <!--app:layout_constraintStart_toStartOf="@+id/monthsummary"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/monthsummary">-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:weightSum="2">-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="75dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:background="@color/greendark"-->
+                        <!--android:orientation="vertical">-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:orientation="vertical">-->
+
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/totalSwipe"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_gravity="center_horizontal"-->
+                                <!--android:layout_marginEnd="10dp"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="0"-->
+                                <!--android:textAlignment="center"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textSize="24sp"-->
+                                <!--android:textStyle="bold"-->
+                                <!--app:srcCompat="@color/greendark" />-->
+
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/totalSwipeText"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_gravity=""-->
+                                <!--android:layout_marginEnd="10dp"-->
+                                <!--android:text="Total Swipe"-->
+                                <!--android:textAlignment="center"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textSize="16sp" />-->
+
+
+                        <!--</LinearLayout>-->
+
+
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="75dp"-->
+                        <!--android:layout_marginStart="10dp"-->
+                        <!--android:layout_marginEnd="10dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:background="@color/error"-->
+
+                        <!--android:orientation="vertical">-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:orientation="vertical">-->
+
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/totalMissed"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_gravity="center_horizontal"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="0"-->
+                                <!--android:textAlignment="center"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textSize="24sp"-->
+                                <!--android:textStyle="bold" />-->
+
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/totalMissedText"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_gravity=""-->
+                                <!--android:layout_marginEnd="10dp"-->
+                                <!--android:text="Missed Swipe"-->
+                                <!--android:textAlignment="center"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textSize="16sp" />-->
+
+
+                        <!--</LinearLayout>-->
+
+
+                    <!--</RelativeLayout>-->
+                <!--</LinearLayout>-->
+
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginTop="10dp"-->
+                    <!--android:orientation="horizontal"-->
+                    <!--android:weightSum="2">-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="75dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:background="@color/sla"-->
+                        <!--android:orientation="vertical">-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:orientation="vertical">-->
+
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/totalExpected"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_gravity="center_horizontal"-->
+                                <!--android:layout_marginEnd="10dp"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="0"-->
+                                <!--android:textAlignment="center"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textSize="24sp"-->
+                                <!--android:textStyle="bold"-->
+                                <!--app:srcCompat="@color/greendark" />-->
+
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/totalExpectedText"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_gravity=""-->
+                                <!--android:layout_marginEnd="10dp"-->
+                                <!--android:text="Expected Swipe"-->
+                                <!--android:textAlignment="center"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textSize="16sp" />-->
+
+
+                        <!--</LinearLayout>-->
+
+
+                    <!--</RelativeLayout>-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="0dp"-->
+                        <!--android:layout_height="75dp"-->
+                        <!--android:layout_marginStart="10dp"-->
+                        <!--android:layout_marginEnd="10dp"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:background="@color/bluelight"-->
+                        <!--android:orientation="vertical">-->
+
+                        <!--<LinearLayout-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--android:orientation="vertical">-->
+
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/percentCompliance"-->
+                                <!--android:layout_width="match_parent"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_gravity="center_horizontal"-->
+                                <!--android:gravity="center"-->
+                                <!--android:text="0"-->
+                                <!--android:textAlignment="center"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textSize="24sp"-->
+                                <!--android:textStyle="bold" />-->
+
+
+                            <!--<android.support.v7.widget.AppCompatTextView-->
+                                <!--android:id="@+id/percentComplianceText"-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_marginEnd="10dp"-->
+                                <!--android:text="% Compliance"-->
+                                <!--android:textAlignment="center"-->
+                                <!--android:textColor="@color/white"-->
+                                <!--android:textSize="16sp" />-->
+
+
+                        <!--</LinearLayout>-->
+
+
+                    <!--</RelativeLayout>-->
+                <!--</LinearLayout>-->
+
+            <!--</LinearLayout>-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginStart="10dp"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:weightSum="2"-->
+                <!--app:layout_constraintStart_toStartOf="@+id/layoutBoard"-->
+                <!--app:layout_constraintTop_toBottomOf="@+id/layoutBoard">-->
+
+                <!--<LinearLayout-->
+                    <!--android:id="@+id/linearwelcome"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<android.support.v7.widget.AppCompatTextView-->
+                        <!--android:id="@+id/recCount"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:layout_marginTop="8dp"-->
+                        <!--android:fontFamily="sans-serif"-->
+                        <!--android:text="@string/default_count"-->
+                        <!--android:textColor="@color/orangedark"-->
+                        <!--android:textSize="50sp"-->
+                        <!--android:textStyle="bold"-->
+                        <!--app:layout_constraintStart_toStartOf="@+id/layoutBoard"-->
+                        <!--app:layout_constraintTop_toBottomOf="@+id/layoutBoard" />-->
+
+                    <!--<TextView-->
+                        <!--android:id="@+id/reclable"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:fontFamily="sans-serif"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="@string/total_upload_count_lbl"-->
+                        <!--android:textAppearance="?android:attr/textAppearanceMedium"-->
+                        <!--android:textColor="@color/black"-->
+                        <!--android:textSize="18sp"-->
+                        <!--android:textStyle="bold"-->
+                        <!--app:layout_anchorGravity="right|center"-->
+                        <!--app:layout_constraintStart_toStartOf="@+id/recCount"-->
+                        <!--app:layout_constraintTop_toBottomOf="@+id/recCount" />-->
+
+                <!--</LinearLayout>-->
+
+                <!--<android.support.v7.widget.AppCompatTextView-->
+                    <!--android:id="@+id/upload"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_gravity="center_vertical"-->
+                    <!--android:layout_marginStart="0dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:background="@drawable/button_background_green"-->
+                    <!--android:gravity="center"-->
+
+                    <!--android:paddingTop="20dp"-->
+                    <!--android:paddingBottom="20dp"-->
+                    <!--android:text="@string/upload_punches"-->
+                    <!--android:textAlignment="center"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="24sp"-->
+                    <!--app:layout_constraintEnd_toEndOf="@+id/layoutBoard"-->
+                    <!--app:layout_constraintTop_toBottomOf="@+id/layoutBoard"-->
+                    <!--app:srcCompat="@drawable/ic_scan" />-->
+
+            <!--</LinearLayout>-->
+
+
+
+        <!--</android.support.constraint.ConstraintLayout>-->
+
+    <!--</ScrollView>-->
+
+</ScrollView>
+

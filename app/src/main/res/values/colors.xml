@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fcc153</color>
+    <color name="colorPrimaryDark">#dc9105</color>
+    <color name="colorAccent">#ff9800</color>
+    <color name="colorNavigationBackground">#455A64</color>
+
+    <color name="dark_icon_half_alpha">#4db74d4d</color>
+    <color name="dark_icon">#990cd0e6</color>
+    <color name="primary">#69F0AE</color>
+    <color name="error">#dd2c00</color>
+    <color name="dark_icon_on_primary">#993f51b5</color> <!-- 60% black on @color/primary -->
+
+    <color name="white">#ffffff</color>
+    <color name="grey">#7A7A7A</color>
+    <color name="background">#0044AA</color>
+    <color name="bluelight">#449def</color>
+    <color name="bluedark">#2F6699</color>
+    <color name="greenlight">#70c656</color>
+    <color name="greendark">#53933f</color>
+    <color name="orangelight">#F3AE1B</color>
+    <color name="orangedark">#BB6008</color>
+    <color name="sla">#FCC153</color>
+    <color name="black">#000000</color>
+    <color name="textCheckpoint">#C0C0C0</color>
+    <color name="pressed_color">#4d90fe</color>
+    <color name="default_color">#ffffff</color>
+
+    <color name="colorText">#0dc9cc</color>
+    <color name="colorAmount">#a2a6ab</color>
+
+    <!--<color name="colorViewDivider">#9baca8a8</color>-->
+    <color name="colorBorder">#9baca8a8</color>
+
+    <!--new design colors-->
+    <color name="colorSLATRACK">#E6485B</color>
+    <color name="colorSLATRACKButton">#F9C152</color>
+    <color name="colorDasboardLayout">#32363F</color>
+    <color name="colorDasboardLayout2">#5D7178</color>
+    <color name="colorOrgName">#FBC153</color>
+    <color name="colorBorderView">#32363F</color>
+    <color name="colorTotalSwipeCard">#956EF3</color>
+    <color name="colorMissedSwipeCard">#F66C6C</color>
+    <color name="colorExpectedSwipeCard">#429ADE</color>
+    <color name="colorComplianceCard">#42DE9F</color>
+    <color name="colorCardText">#2B5893</color>
+    <color name="colorActiveText">#64A723</color>
+    <color name="colorBorderTxnSummery">#E2E2E2</color>
+    <color name="colorBackgroundTxnSummery">#F1F1F1</color>
+    <color name="colorSwipeGreen">#9AC331</color>
+    <color name="colorMissedRed">#EE5262</color>
+    <color name="colorExpectedBlue">#519CF2</color>
+    <color name="colorPercent">#16A39C</color>
+
+    <color name="colorView1Start">#EB5873</color>
+    <color name="colorView1End">#FBB52E</color>
+
+    <color name="colorView2Start">#1DA39A</color>
+    <color name="colorView2End">#7DBC49</color>
+
+    <color name="colorView3Start">#E42987</color>
+    <color name="colorView3End">#601965</color>
+
+    <color name="colorEmergencyText">#FBC155</color>
+    <color name="colorSOSButton">#FBC155</color>
+    <color name="colorSupportText">#E44645</color>
+    <color name="colorSupportTextBoxBorder">#B7B7B7</color>
+    <color name="colorRefreshText">#64A723</color>
+
+    <color name="colorSubNameText">#E52987</color>
+    <color name="colorValidityText">#00A7E7</color>
+    <color name="colorReaderText">#9531C3</color>
+    <color name="colorReaderNameText">#865CBB</color>
+    <color name="colorUserNameText">#9AC331</color>
+    <color name="colorPrimarySOSText">#FD7897</color>
+    <color name="colorServerDetailsBackground">#32363F</color>
+    <color name="colorBottomBar">#8F95A1</color>
+
+    <color name="colorRed">#FF0000</color>
+    <color name="colorScanHeader">#676A70</color>
+    <color name="colorScanButton">#F6CA77</color>
+
+
+</resources>

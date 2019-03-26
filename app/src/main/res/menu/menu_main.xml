@@ -1,0 +1,34 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".fragment.FragmentScan"
+    >
+    <item android:id="@+id/action_welcome"
+        android:title="@string/home"
+        android:icon="@drawable/menu_item1"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:tooltipText="Home"/>
+
+    <item android:id="@+id/action_report"
+        android:title="@string/summary_report"
+        android:icon="@drawable/menu_item2"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:tooltipText="View Summary"/>
+
+    <item android:id="@+id/action_subscription"
+        android:title="@string/subscription"
+        android:icon="@drawable/menu_item3"
+        android:orderInCategory="300"
+        app:showAsAction="always"
+        android:tooltipText="View Subscription"/>
+
+    <item android:id="@+id/action_diagnostics"
+        android:title="@string/diagnostics"
+        android:icon="@drawable/menu_item4"
+        android:orderInCategory="400"
+        app:showAsAction="always"
+        android:tooltipText="View Configuration"
+        />
+</menu>

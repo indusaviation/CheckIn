@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/coordinatorLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.FragmentSupport">
+
+
+    <RelativeLayout
+        android:id="@+id/imageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:id="@+id/supportTextLayout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.6"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:breakStrategy="simple"
+                android:text="@string/support_text_1"
+                android:textColor="@color/colorSupportText"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/support_text_2" />
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/supportText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="+919172987516"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="500px"
+            android:layout_height="350px"
+            android:layout_toEndOf="@+id/supportTextLayout"
+            android:background="@mipmap/support_image" />
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical">
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:id="@+id/txtUserNameSupportLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="20dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:background="@drawable/support_editbox">-->
+
+
+            <EditText
+                android:id="@+id/txtUserNameSupport"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/support_editbox"
+                android:drawableStart="@drawable/ic_perm_identity"
+                android:drawablePadding="10dp"
+                android:hint="Enter your name"
+                android:inputType="textPersonName"
+                android:minHeight="45dp"
+                android:paddingStart="10dp"
+                android:textSize="15dp" />
+
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:id="@+id/txtOrgNameSupportLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:background="@drawable/support_editbox">-->
+
+
+            <EditText
+                android:id="@+id/txtOrgNameSupport"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/support_editbox"
+                android:drawableStart="@drawable/ic_org"
+                android:drawablePadding="10dp"
+                android:hint="Enter organization name"
+                android:inputType="textPersonName"
+                android:minHeight="45dp"
+                android:paddingStart="10dp"
+                android:text=""
+                android:textSize="15dp" />
+
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:id="@+id/txtPhoneSupportLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:background="@drawable/support_editbox">-->
+
+
+            <EditText
+                android:id="@+id/txtPhoneSupport"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/support_editbox"
+                android:drawableStart="@drawable/ic_contact_phone"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Enter contact number"
+                android:inputType="phone"
+                android:minHeight="45dp"
+                android:paddingStart="10dp"
+                android:text=""
+                android:textSize="15dp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:id="@+id/txtEmailSupportLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:background="@drawable/support_editbox">-->
+
+            <EditText
+                android:id="@+id/txtEmailSupport"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/support_editbox"
+                android:drawableStart="@drawable/ic_contact_email"
+                android:drawablePadding="10dp"
+                android:hint="Enter email address"
+                android:inputType="textEmailAddress"
+                android:minHeight="45dp"
+                android:paddingStart="10dp"
+                android:text=""
+                android:textSize="15dp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+
+            <!--<android.support.design.widget.TextInputLayout-->
+            <!--android:id="@+id/txtRequestTextLayout"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="8dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:background="@drawable/support_editbox">-->
+
+            <EditText
+                android:id="@+id/txtRequestText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/support_editbox"
+                android:drawableStart="@drawable/ic_message_text"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Enter request information"
+                android:inputType="textMultiLine"
+                android:minHeight="45dp"
+                android:paddingStart="10dp"
+                android:text=""
+                android:textSize="15dp" />
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <Button
+                android:id="@+id/btnTicketSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/button_background_green"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingTop="8dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="8dp"
+                android:text="Submit Ticket"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <ProgressBar
+        android:id="@+id/progressBarSupport"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelinesupport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barriersupport"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
+
+
+</RelativeLayout>

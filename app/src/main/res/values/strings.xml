@@ -1,0 +1,243 @@
+<resources>
+    <string name="app_name">SLAGTMS</string>
+    <string name="subtype_gtms">GTMS</string>
+    <string name="subtype_fms">FMS</string>
+
+    <string name="verification_fail">Please call %1$s to activate your subscription</string>
+    <string name="renew_subscription">Please call %1$s to renew your subscription</string>
+    <string name="noeventdata_txt">Please select atleast one event to upload</string>
+    <string name="unmap_rquest">Your unmap request is placed. Please contact Indus Support at %1$s </string>
+    <string name="multiple_user">Multiple users are mapped to this device. Access has been disabled. Please contact Indus Support at %1$s </string>
+    <string name="unknown_issue">Oops seems like there is a network error. Please check your mobile data is ON else call our support line at %1$s</string>
+    <string name="registration_pending">Your registration request is in process. Please call %1$s to know the status </string>
+    <string name="support_text">Thank you for reaching out. We are going to do everything we can to resolve your request.
+        \n\nIf its an emergency, you can contact us by phone at %1$s.
+        </string>
+
+    <string name="support_text_1">Thank you for reaching out</string>
+    <string name="support_text_2">We are going to do everything we can to resolve your request.\nIf it\'s an emergency, you can contact us by phone at</string>
+    <string name="registration_text">
+
+    Thank you for downloading the SLATRACK GTMS Application.\n \n With this app, you will be able to track the performance of your security agency performance and compliance to the daily rounds.
+\n\nWith this application, the user will be able to
+\n\nPunch the checkpoints
+\nReview summary of compliance
+\nSend SOS in case of emergency
+\n\nTo know more about the application or upcoming updates in the product- please visit www.slatrack.com for more details or call at %1$s or email at %2$s
+\n\nThanks once again for downloading and using SLAGTMS app.
+    </string>
+
+    <string name="subscription_pending">Your subscription request is already in process. Please call %1$s to know the status </string>
+    <string name="slatrack_text_old">
+         Thank you for downloading SLA GTMS Application. The application provides you the facility
+         to track the compliances of day to day task.\n\nThe currrent application is an Guard Tour Monitoring application
+         which tracks the compliance of your security guard service level agreements \n\nTo start using the application, you need to validate your SUBSCRIPTION. Please click on the below button
+         \n\nTo know more about the application or upcoming updates in the product- please visit <b>www.slatrack.com</b>for more details or call at %1$s or email at %2$s
+\n\nThanks once again for downloading and using SLAGTMS app.
+    </string>
+
+    <string name="slatrack_text1">
+         Thank you for downloading SLA GTMS Application
+    </string>
+    <string name="slatrack_text">
+         To start using the application, you need to validate your SUBSCRIPTION. Please click on the below button\nCall at %1$s or email at %2$s to know more about the product.
+    </string>
+
+    <string name="server_issue">Server error occurred</string>
+    <string name="permissionMsg">Please grant permission to read your IMEI number. This will help us verify your mobile.</string>
+    <string name="app_close">Please reopen the application to access CheckIn</string>
+
+    <string name="nonetwork_mobiledataoff">Oops...It seems mobile data or WIFI is OFF ! Please check your internet/server connection. </string>
+
+    <string name="checkinSuccess">Checked In Successfully</string>
+    <string name="checkinFail">Punch Records are not updated</string>
+    <string name="reading_card">Reading access card </string>
+    <string name="read_card_again">Scan Card again</string>
+    <string name="reader_disconnected">Reader is Disconnected. Please connect the device</string>
+    <string name="readerConnected">Reader is Connected.</string>
+    <string name="permissionGranted">Permission Granted.</string>
+    <string name="permissionnotgranted">Permission is not granted to the device.</string>
+    <string name="mobiledataoff">Your mobile data is OFF. Proceeding with offline mode.</string>
+    <string name="mobiledataoffcannotproceed">Your mobile data is OFF. Operation can not proceed.</string>
+    <string name="thankyou_registration">Your registration request is received We will call you within 1 business day to activate your account. </string>
+    <string name="thankyou_ticketreceived">Your support request is received. We will get back to you shortly. Email has been sent with details </string>
+    <string name="sos_text">Do not assume that your message has been received until you get a message back from the </string>
+    <string name="sos_text1">Emergency Service</string>
+    <string name="nonetwork_text">Oops... looks like we have a network error ! Please check your internet/server connection. </string>
+    <string name="noitem_text">Oops... looks like its a configruation error ! Please contact support to enable all features. </string>
+    <string name="noeventitem_text">There are no events mapped to the checkpoint ! Please contact support to enable all features. </string>
+    <string name="event_text">Please select tasks you have completed. Please note that event selected can not reverted back.</string>
+    <string name="subscreen_text">Please select tasks you have completed. Please note that event selected can not reverted back.</string>
+
+    <string name="summary_text"> Summary Text.</string>
+    <string name="diag_text"> Diagnostic Text.</string>
+    <string name="summary_report">Report</string>
+    <string name="home">Home</string>
+    <string name="update_server">Update Cloud</string>
+    <string name="subscription">Subscription</string>
+    <string name="about_sla">SLATRACK</string>
+    <string name="diagnostics">Diagnostics</string>
+    <string name="logo_desc">SLATRACK</string>
+    <string name="title_activity_subscription">Subscription</string>
+    <string name="title_activity_summary">Summary</string>
+    <string name="title_activity_support">Support</string>
+    <string name="title_activity_shift_details">ShiftDetails</string>
+    <string name="title_activity_shift_schedules">ScheduleList</string>
+    <string name="title_activity_registration">Registration</string>
+    <string name="title_activity_slatrack">Slatrack</string>
+    <string name="ok">OK</string>
+
+    <string name="slatrack_version">
+        SLATRACK GTMS\nVersion: 1.0.0\nwww.slatrack.com
+    </string>
+    <string name="title_activity_aboutsla">Aboutsla</string>
+    <string name="title_activity_event_list">EventList</string>
+    <string name="unmapSuccess">Your request for unmapping is successful</string>
+    <string name="unmapFailure">Your request for unmapping failed</string>
+    <string name="scan_round_btn">SCAN ROUND</string>
+    <string name="org_name_lbl">Org Name :</string>
+    <string name="user_name_lbl">User Name :</string>
+    <string name="subscription_expiry_lbl">Subscription Expiry :</string>
+    <string name="connectivity_lbl">Connectivity :</string>
+    <string name="total_swipe_lbl">Total Swipe   0</string>
+    <string name="total_pending_lbl">Total Pending   0</string>
+    <string name="total_round_lbl">Total Round   0</string>
+    <string name="compliance_lbl">% Compliance   0</string>
+    <string name="save_records">SAVE AND UPLOAD EVENTS</string>
+    <string name="upload_to_server_btn">UPLOAD TO SERVER</string>
+    <string name="total_upload_count_lbl">Pending upload</string>
+    <string name="default_count">0000</string>
+    <string name="report">Report</string>
+    <string name="summary">Summary</string>
+    <string name="sos">SOS</string>
+    <string name="support">Support</string>
+    <string name="about">About</string>
+    <string name="guide">Guide</string>
+    <string name="monthly_summary_of_compliance">Summary of Compliance</string>
+    <string name="punch_records">Punch Records</string>
+    <string name="submit_events">Update Events</string>
+    <string name="submit_schedules">Update Schedule</string>
+    <string name="submit_shifts">Update Shifts</string>
+    <string name="upload_punches">Upload Records</string>
+    <string name="place_card">Swipe Card</string>
+    <string name="btn_update_server">Upload Records</string>
+    <string name="title_activity_sosmessage">SOS</string>
+    <string name="title_activity_guide">ActivityGuide</string>
+    <string name="title_activity_diagnostics">ActivityDiagnostics</string>
+    <string name="excellent">Excellent</string>
+    <string name="good">Good</string>
+    <string name="bad">Bad</string>
+
+
+    <string name="maxLimit">Max limit is 9999</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="revokeMsg">Do you really want to revoke?</string>
+    <string name="no_history">No transaction history available</string>
+    <string name="payment">Payment : </string>
+    <string name="refund_history">Refund :</string>
+    <string name="history">Compliance Summary</string>
+    <string name="organizationinfo">Organization Information</string>
+    <string name="name">User Name</string>
+    <string name="member_id">Member ID :</string>
+    <string name="balance">Balance :</string>
+    <string name="txn_total_swipe">Total Swipe Count</string>
+    <string name="txn_total_missed">Total Missed Count</string>
+    <string name="txn_total_expected">Total Expected Count</string>
+    <string name="txn_percent">% Compliance</string>
+    <string name="orgname">Organization</string>
+    <string name="sub_validity">Sub Validity : </string>
+    <string name="sub_type">Sub Type</string>
+    <string name="org_status">Org Status</string>
+    <string name="sub_status">Sub Status</string>
+    <string name="subname_txt">Name :</string>
+    <string name="subrates_txt">Rate :</string>
+    <string name="subperiod_txt">Duration :</string>
+    <string name="subamount_txt">Amount :</string>
+    <string name="suboffer_txt">Offer :</string>
+
+    <string name="rd_connected">CONNECTED</string>
+    <string name="rd_disconnected">DISCONNECTED</string>
+
+    <string name="rd_connected_complete">READER\nCONNECTED</string>
+    <string name="rd_disconnected_complete">READER\nDISCONNECTED</string>
+
+
+    <string name="diag_screentext">Diagnostic Information</string>
+
+    <string name="subscribe_msg">Do you want to subscribe for this plan?</string>
+    <string name="subscribe_successmsg">Subscription </string>
+    <string name="subscription_details">Subscription Details</string>
+
+    <string name="thankyou_subscription">Your subscription request is received. We will process your request in 1 business day. </string>
+
+    <string name="refresh_datamsg">Application data shall be refreshed on next launch</string>
+
+    <string name="reader_notconnected">Please connect the reader to enable scanning</string>
+    <string name="reader_status">Reader Status</string>
+
+
+    <string name="Organization_Name">Organization</string>
+    <string name="Enable_SMS">Enable SMS:</string>
+    <string name="Enable_Email">Enable Email:</string>
+    <string name="Facility_Type">Facility Type"</string>
+    <string name="Update_Mode">Update Mode:</string>
+    <string name="Verification_Status">Verification</string>
+    <string name="Subscription_Type">Sub Type</string>
+    <string name="Subscription_Status">Sub Status</string>
+    <string name="Subscription_Name">Sub Name</string>
+    <string name="Subscription_Validity">Sub Validity</string>
+    <string name="Reader_Code">Reader Code</string>
+    <string name="Reader_Status">Reader Status</string>
+    <string name="Reader_Name">Reader Name</string>
+    <string name="User_Name">User Name</string>
+    <string name="Primary_SOS">Primary SOS</string>
+    <string name="Server_Update">Server Update</string>
+    <string name="Device_Update">Device Update</string>
+    <string name="Need_Update">Need Update</string>
+    <string name="App_Version">App Version</string>
+    <string name="Application_Type">Application Type</string>
+    <string name="Support_Email">Support Email</string>
+    <string name="Support_Phone">Support Phone</string>
+
+    <string name="RS_symbol">\u20B9</string>
+    <string name="shareSupport">Share with Support</string>
+
+    <string name="press_back_again">Please click BACK again to exit</string>
+    <string name="permissionExternal">Please grant permission for External storage.</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="email">Email</string>
+    <string name="whatsapp">WhatsApp</string>
+    <string name="shareVia">Share Via</string>
+    <string name="permissionDenied">not able to save data in device\'s external storage.</string>
+    <string name="permissionAccepted">Please click on share to get in touch with our support team.</string>
+    <string name="totalSwipe">Total Swipe</string>
+    <string name="_swipe">Swipe</string>
+    <string name="_missed">Missed</string>
+    <string name="_expected">Expected</string>
+    <string name="missedSwipe">Missed Swipe</string>
+    <string name="expectedSwipe">Expected Swipe</string>
+    <string name="Compliance">% Compliance</string>
+    <string name="_compliance">Compliance</string>
+    <string name="organizationStatus">Organization Status</string>
+    <string name="reader">Reader Status</string>
+    <string name="btnSubscribe">SUBSCRIBE</string>
+    <string name="btnSendSOS">Send SOS</string>
+    <string name="btnRefreshData">REFRESH DATA</string>
+
+    <string name="msg_title_success">SUCCESS</string>
+    <string name="msg_title_information">INFO</string>
+    <string name="msg_title_warning">WARNING</string>
+    <string name="msg_title_error">ERROR</string>
+    <string name="msg_title_request">REQUEST</string>
+    <string name="okaction_movetowelcome">MOVETOWELCOME</string>
+
+
+    <string name="title_activity_qr">Scan QR Code</string>
+    <string name="title_activity_qr2">ActivityQR2</string>
+    <string name="wrongQR">invalid QR code</string>
+    <string name="cameraAccess">Please grant permission to access camera</string>
+    <string name="gpsAccess">Please grant permission to get your location</string>
+    <string name="scanNow">Please click on start again</string>
+
+</resources>
